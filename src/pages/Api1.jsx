@@ -5,7 +5,7 @@ import { getAuctions, getUsers, logIn } from "../components/FetchAuctions";
 
 const Api1 = () => {
   const [auctions, setAuctions] = useState([]);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState({});
 
   const handleClick = async () => {
     let response = await getAuctions();
@@ -18,7 +18,7 @@ const Api1 = () => {
     let response = await getUsers();
     const data = await response.json();
     setUsers(data);
-    console.log(users);
+    console.log(data);
   };
 
   const handleLogIn = async () => {

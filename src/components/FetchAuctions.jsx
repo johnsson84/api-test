@@ -30,7 +30,13 @@ const logIn = async () => {
 };
 
 const getUsers = async () => {
-    return fetch("http://localhost:8080/api/user/find/all");
+    return await fetch("http://localhost:8080/api/user/find/all", {
+      method: 'GET',
+      headers: { 
+        "Content-Type": "application/json", 
+    },
+    credentials: 'include',
+    });
   };
 
 export { getUsers, getAuctions, logIn };
